@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://www.domain.com/scripts/survey.php" method="get">
+        <div>email: <input type="text" name="email" size="30" /></div>
+        <div>password: <input type="password" name="password" size="30" /></div>
+        <div>
+            <label>
+                <input type="radio" name="payment" value="visa" />
+                Visa
+            </label>
+            <br />
+            <label>
+                <input type="radio" name="payment" value="Mastercard" />
+                Mastercard
+            </label>
+        </div>
+        <div>
+            <label>
+                <input type="checkbox" name="groceries[]" value="milk" checked /> Milk
+            </label>
+            <label>
+                <input type="checkbox" name="groceries[]" value="bread" /> Bread
+            </label>
+            <label>
+                <input type="checkbox" name="groceries[]" value="eggs" /> Eggs
+            </label>
+        </div>
+
+        <div>
+            <select name="groceries" size="1">
+                <option>milk</option>
+                <option>bread</option>
+                <option>eggs</option>
+                <option>cheese</option>
+            </select>
+            <select name="groceries" size="3" multiple>
+                <option>milk</option>
+                <option selected="true">bread</option>
+                <option>eggs</option>
+                <option>cheese</option>
+            </select>
+        </div>
+        <div>
+            <textarea name="aspirations" rows="3" cols="40">
+(Be brief and concise) 
+</textarea>
+        </div>
+        <div>
+            <video width = "600" height = "500" autoplay = "autoplay"
+controls = "controls" >
+<source src = "NorskTippingKebab.mp4">
+<source src = "NorskTippingKebab.ogv" >
+<source src = "NorskTippingKebab.webm" >
+Your browser does not support the video element
+</video>
+        </div>
+        <input type="reset" value="Reset Form" />
+        <input type="submit" value="Submit Form" />
+    </form>
+</body>
+
+</html>

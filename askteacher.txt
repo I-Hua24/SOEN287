@@ -1,0 +1,18 @@
+tut 1 idk the steps
+
+A. Request Data 
+B. Request Web page with URL Address 
+C. Web URL 
+D. Response (Data) 
+E. Web content response 
+F. Response by Web server 
+G. Display of Web content 
+H. Request of Web content
+
+A. client B. browser C.WWW D. Web server E. Database server
+
+
+In the given URL "http://www.example.com:8080/page/index.html" can you identify the following:
+● Protocol: What is the protocol used in this URL?
+● Source: What is the source or domain of this URL?
+● Specific Information: What specific information or resource is being accessed in this URL
