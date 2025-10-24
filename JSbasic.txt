@@ -1,0 +1,280 @@
+JS math
++   -   *   /   %
+++  --
++=  -=  *=  /=  %=  
+math.pow(x,y)
+math.sqrt(x)
+math.round(x)
+math.ceil(x)
+math.floor(x)
+math.min(x,y,z,...)
+math.max(x,y,z,...)
+math.random() 0 to 1 
+math.random() * 100 0 to 100
+math.cos(x)
+math.sin(x)
+math.tan(x)
+math.... 
+
+MAX_VALUE
+MIN_VALUE
+POSITIVE_INFINITY
+NEGATIVE_INFINITY
+NaN
+PI
+
+ • String.length
+ • String(value): returns string
+ • new String(value): returns object
+
+String methods
+ • charAt
+ • concat
+ • indexOf
+ • lastIndexOf
+ • replace
+ • search
+ • split
+ • substring
+ • toLowerCase
+ • toUpperCase
+ •  …
+
+
+
+
+ • 0, -0, null, undefined, "", false, or NaN are false
+ • "0" is true!
+ •  Boolean("false") returns true
+
+  The Date Object
+    toLocaleString – returns a string of the date
+    getDate – returns the day of the month
+    getMonth – returns the month of the year (0 – 11)
+    getDay – returns the day of the week (0 – 6)
+    getFullYear – returns the year
+    getTime – returns the number of milliseconds since January 1, 1970
+    getHours – returns the hour (0 – 23)
+    getMinutes – returns the minutes (0 – 59)
+    getMilliseconds – returns the millisecond (0 – 999)
+
+  alert("message") - pop up alert box with ok button
+  confirm("question") - pop up box with ok and cancel button
+  prompt("question","default") - pop up box with text input field, ok and cancel button
+
+
+Comparison Operators
+   == equal to
+   === equal value and type 
+   != not equal to
+   !== not equal value and type
+   < less than
+   > greater than
+   <= less than or equal to
+   >= greater than or equal to
+
+
+Logical Operators
+  && logical and (return second operand if first is true)
+  || logical or (return second operand if first is false)
+  ! logical not (reverse boolean value)
+
+
+switch (expression) { uses strict comparison ===
+ case value_1:
+ // value_1 statements
+ case value_2:
+ // value_2 statements
+ …
+ [default:
+ // default statements]
+ }
+
+loops
+  for (initialization; condition; increment) {
+  // code block to be executed
+  }
+  
+  while (condition) {
+  // code block to be executed
+  }
+  
+  do {
+  // code block to be executed
+  } while (condition);
+  
+
+  Rules of thumb
+• Use const unless you need to change value
+• Use let if you need to change the value BUT you don’t need the variable to be function/global
+• Use var if you need to change the value and you need function/global scope
+
+| Feature          | `var`                            | `let`                     | `const`                       |
+| ---------------- | -------------------------------- | ------------------------- | ----------------------------- |
+| **Scope**        | Function-scoped                  | Block-scoped              | Block-scoped                  |
+| **Hoisting**     | Yes (initialized as `undefined`) | Yes (but not initialized) | Yes (but not initialized)     |
+| **Reassignable** | Yes                              | Yes                       | **No** (cannot be reassigned) |
+| **Redeclarable** | Yes (in same scope)              | No                        | No                            |
+| **Use case**     | Older code / not recommended     | When value may change     | When value should not change  |
+
+
+function function_name([formal_parameters]) {
+-- body –
+}
+
+
+• functions are objects
+
+refToFunction = fun;
+...
+refToFunction(); /* A call to fun */
+
+
+
+• Functions are defined in the head of the HTML file
+
+
+• Named function:
+function sum(a, b) { return a + b;}
+• Anonymous function:
+(function (a, b) { return a + b ;})
+• Arrow functions
+ (a, b) => { return a + b; }
+ They have some limitations
+
+
+
+
+OBJECTS
+const person = { firstName:"John", lastName:"Doe", age:46 };
+person.lastName returns Doe
+
+
+
+
+
+ARRAYS (can mix types obj included)
+
+const cars = [
+"Saab",
+"Volvo",
+"BMW"
+];
+
+or 
+const cars
+= new Array("Saab", "Volvo", "BMW");
+
+or 
+const cars = [];
+cars[0]= "Saab";
+cars[1]= "Volvo";
+cars[2]= "BMW";
+
+cars.length // Returns the number of elements
+cars.sort() // Sorts the array 
+cars.reverse() //reverse the array
+
+let car = cars[cars.length - 1]; // gives BMW
+
+const points = [40];
+is different from
+const points = new Array(40); -> creates new array with 40 slot instead of 1 eleemnt with content 40
+
+
+ cars.toString(); // returns string of content seperated by ","
+ cars.join(" * "); // same as above except with " * "
+ cars.push("Nissan"); //add Nissan to cars
+ cars.pop() // remove the last element "Nissan"in this case
+ cars.shift() // remove the first element "saab"in this case
+ cars.unshift("Saab"); //puts the new element in the beginning
+ delete cars[0] // leaves undefined hole in the indicated place
+ const arr3 = arr1.concat(arr2); 
+ const arr4= arr3.concat("new element");
+ cars.splice(i,0,"Audi","Hyundai") //puts audi and hyundai in the cars at cars[2] and car[3]
+ cars.splice(i,j,...) start at cars[i] remove j objects and then insert ...
+ *note* removed elements are returned as a new array while modifying the original arrray
+ cars.slice(i, j) //make new array and with value of cars[i] to not including cars[j]
+ 
+ 
+ cars.sort() //sort everything as strings
+ arr.sort(function(a, b){return a - b}); //sort numbericaally
+
+ points.sort(fun);
+ function fun(a, b){//sort opposite
+ return b - a
+ }
+
+
+ cars.reverse()
+ cars.indexOf(...) looks for first ... in cars otherwise -1
+ cars.lastIndexOf(...) looks for last ... in cars otherwise -1
+ cars.forEach(myFunction); for each element in cars call myFunction
+ const numbers = [45, 4, 9, 16, 25];
+ let txt = "";
+ numbers.forEach(myFunction);
+ function myFunction(value, index, array) { or just (value)
+ txt += value + " ";
+ }
+
+
+ const numbers = [45, 4, 9, 16, 25];
+
+const numbers2 = numbers.map(myFunction);
+ function myFunction(value, index, array) 
+{
+ return value * 2;
+ }
+
+
+ const over18 = 
+numbers.filter(myFunction);
+ function myFunction(value, index, 
+array) {return value > 18;
+ }
+
+
+
+ let sum = 
+numbers.reduce(myFunction);
+ function myFunction(total, value, 
+index, array) {
+ return total + value;
+ }
+
+let allOver18 = numbers.every(myFunction);
+function myFunction(value, index, 
+array) {
+ return value > 18;
+}
+
+
+
+let someOver18 = numbers.some(myFunction);
+function myFunction(value, index, 
+array) {
+ return value > 18;
+}
+
+let first = numbers.find(myFunction);
+ function myFunction(value, index, 
+array) {
+  return value > 18; // i noticed index dont work (undefined)
+ }
+
+
+
+ let a, b, rest;
+ [a, b] = [10, 20];
+ console.log(a);
+ // expected output: 10
+ console.log(b);
+ // expected output: 20
+ [a, b, ...rest] = [10, 20, 30, 40, 50];
+ console.log(rest);
+ // expected output: Array [30,40,50]
+ const arr2 = [...rest, a, b, ...rest];
+ console.log(arr2);
+ // expected output: Array [30, 40, 50, 10, 20, 30, 40, 50]
+
+ 

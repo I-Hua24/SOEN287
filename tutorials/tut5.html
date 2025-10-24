@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Hello world </title>
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <script>
+        //manageNamesArray(); 
+        //manageStudentsArray 
+        //manageMixedArray();
+        manageCitiesArray();
+        function manageNamesArray() {
+            let names = ["Alice", "Bob", "Charlie", "David"];
+            console.log("Initial names array:", names);
+
+            //Add "Eve" and "Frank" to the end of the array and print the output to the console
+            names.push("Eve", "Frank");
+            console.log("After adding Eve and Frank:", names);
+
+            //Add "Grace" to the beginning of the array and print the output to the console
+            names.unshift("Grace");
+            console.log("After adding Grace:", names);
+
+            // sort Array alphabetically and print the output to the console
+            names.sort();
+            console.log("After sorting alphabetically:", names);
+
+            //Remove "Bob" from the array and print the output to the console
+            let bobIndex = names.indexOf("Bob");
+            if (bobIndex !== -1) {
+                names.splice(bobIndex, 1);
+            }
+            console.log("After removing Bob:", names);
+
+            //Reverse the array and print the output to the console
+            names.reverse();
+            console.log("After reversing:", names);
+
+            // Remove the first element and print the output to the console
+            names.shift();
+            console.log("After removing the first element:", names);
+
+            // Combine all names into a single string separated by commas and print the output to the console
+            let namesString = names.join(", ");
+            console.log("Combined names string:", namesString);
+
+            // Print the resulting array length to the console
+            console.log("Length of the names array:", names.length);
+        }
+        function manageStudentsArray() {
+            let students = [
+                { ID: 1, FirstName: "John", LastName: "Doe", Age: 20 },
+                { ID: 2, FirstName: "Jane", LastName: "Smith", Age: 22 },
+                { ID: 3, FirstName: "Emily", LastName: "Johnson", Age: 19 },
+            ];
+            console.log("Initial students array:");
+            students.forEach(student => {
+                console.log(`ID: ${student.ID}, Name: ${student.FirstName} ${student.LastName}, Age: ${student.Age}`);
+            });
+            //edit the age of the 3rd student to 20
+            students[2].Age = 20;
+            console.log("After updating Emily's age:");
+            students.forEach(student => {
+                console.log(`ID: ${student.ID}, Name: ${student.FirstName} ${student.LastName}, Age: ${student.Age}`);
+            });
+
+            //add a new student
+            students.push({ ID: 4, FirstName: "Michael", LastName: "Brown", Age: 21 });
+            console.log("After adding Michael:");
+            students.forEach(student => {
+                console.log(`ID: ${student.ID}, Name: ${student.FirstName} ${student.LastName}, Age: ${student.Age}`);
+            });
+        }
+        function calculateSum(a, b) {
+            return a + b;
+        }
+        function manageMixedArray() {
+            //1. Create an array that contains different data types
+            let mixedArray = [];
+            console.log("Initial mixed array:", mixedArray);
+
+            mixedArray[0] = { name: "Alice", age: 30 };
+            mixedArray[1] = calculateSum;
+            let colors = ["Red", "Green", "Blue"];
+            mixedArray[2] = colors;
+            let today = { day: "Monday", date: "2024-06-10" };
+            mixedArray[3] = today;
+
+            // Iterate through the array and print each element's type and value
+            mixedArray.forEach((element, index) => {
+                console.log(`Index ${index} — Type: ${typeof element}, Value:`, element);
+            });
+
+            // 2. Access and log the name property of the person object
+            console.log("Name:", mixedArray[0].name); // "Alice"
+
+            // 3. Call the calculateSum function and log the result
+            let sumResult = mixedArray[1](10, 15); // Pass any numbers you want
+            console.log("Sum:", sumResult); // 25
+
+            // 4. Access and log the second color from the colors array
+            console.log("Second color:", mixedArray[2][1]); // "Green"
+
+            // 5. Access and log the current date from the Date object
+            console.log("Date:", mixedArray[3].date); // "2024-06-10"
+
+        }
+
+        function manageCitiesArray() {
+            let cities = ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix"];
+            console.log("Initial cities array:", cities);
+
+
+            cities = cities.concat(["Miami", "Seattle", "Boston"]);
+            console.log("After adding new cities:", cities);
+
+            let stringOfCities = "Dallas,San Francisco,Denver";
+            let newCities = stringOfCities.split(",");
+            cities = [...cities, ...newCities];
+            console.log("After adding cities from string:", cities);
+
+            let indexOfChicago = cities.indexOf("Chicago");
+            console.log("Index of Chicago:", indexOfChicago);
+
+            cities.splice(2, 2, "Austin", "San Diego");
+            console.log("After removing and adding cities:", cities);
+
+            cities.sort();
+            console.log("After sorting cities alphabetically:", cities);
+            let westCoastCities = cities.slice(cities.indexOf("Los Angeles"), cities.indexOf("Seattle") + 1);
+            westCoastCities = westCoastCities.filter(city =>
+                ["Los Angeles", "Seattle", "San Francisco"].includes(city)
+            );
+
+            console.log("West Coast Cities:", westCoastCities);
+            console.log("All Cities:", cities);
+        }
+    </script>
+    right click and inspect to see the console output
+</body>
+
+</html>

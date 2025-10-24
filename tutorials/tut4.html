@@ -1,3 +1,4 @@
+`
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,15 +27,26 @@
         <p>This is a section</p>
     </section>
     <div>
-        <h1>Rectangle Area Calculator</h1>
-        <p>For a rectangle with width <em>w</em> and height <em>h</em>, 
-            the area is : <em>A</em></p>
+        <script>
+            let w = 20
+            let h = 5
+            let a = w * h
+            document.write(
+                "<div class='rectangle'><h1>Rectangle Area Calculator</h1> <p>the rectangle of width " + w + " and height " + h + " area is " + a + "</p></div>")
+
+        </script>
+    </div>
+    <div class="rectangle">
+        <h1> Random Quote Generator</h1>
+        <p id="quote"></p>
+        <button onclick="newQuote()">
+            Get a Quote</button>
+        <script src="tut4.js"></script>
     </div>
     <footer>
         <p>&copy; 2023 Your Website</p>
         <p>Contact: info@example.com</p>
     </footer>
-    <script src="tut4.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,25 @@
-header{
+header {
     background-color: lightblue;
     padding: 20px;
     text-align: center;
 }
-footer{background-color: lightgray;
-text-align: center;}
+
+footer {
+    background-color: lightgray;
+    text-align: center;
+}
+
+.rectangle {
+    align-self: center;
+    padding: 20px;
+    margin: 0 auto;
+    width: 400px;
+    box-shadow: 2px 2px 5px grey;
+    font-family: sans-serif;
+}
+button {
+    background-color: lightblue;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
